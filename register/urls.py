@@ -7,7 +7,9 @@ urlpatterns = patterns('register.views',
 
     url(r'^$', 'index'),
     url(r'^index/', 'index'),
-    url(r'^login/', 'login'),
+    url(r'^login/', 'login_view'),
     url(r'^register/', 'register'),
-    url(r'^success/', 'thanks')
+    url(r'^success/', 'thanks'),
+    url(r'^welcome/', 'welcome'),
+    url(r'^logout/', 'logout_view'),
 )
