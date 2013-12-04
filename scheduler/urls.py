@@ -4,6 +4,6 @@ urlpatterns = patterns('scheduler.views',
     # Examples:
     # url(r'^$', 'AgencySite.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
+    url(r'', 'data_entry'),
 
-    url(r'^$', 'data_entry'),
 )
