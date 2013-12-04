@@ -30,4 +30,4 @@ def formatResult(iterable):
             x = json.dumps(newIterable)
         return x
     else:
-        return "no classes"
+        return "nil"
