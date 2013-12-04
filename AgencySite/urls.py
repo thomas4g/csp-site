@@ -1,5 +1,4 @@
 from django.conf.urls import patterns, include, url
-
 from django.contrib import admin
 from django.contrib.auth.views import login, logout
 admin.autodiscover()
@@ -12,4 +11,6 @@ urlpatterns = patterns('',
     url(r'^admin/$', include(admin.site.urls)),
     url(r'', include('register.urls')),
     url(r'^app/$', include('scheduler.urls')),
+    url(r'^api/$', 'api.views.api'),
+    url(r'^api/(.*)/', 'api.views.apiget')
 )

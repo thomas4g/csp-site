@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A schedule</title>
+</head>
+<body>
+<h1>Your class schedule:</h1>
+{% for each_item in data %}
+    {% if "is not in the schedule" in each_item %}
+        <b>{{ each_item }}</b>
+        <br>
+    {% else %}
+        <h2>{{ each_item.school }} {{ each_item.name }}</h2>
+        <h3>{{ each_item.title }}</h3>
+            <b>Section {{ each_item.section }}</b>
+            {% for time in each_item.meetings %}
+                <br>
+                {% if time.monday == True %}
+                <b>Monday</b>
+                {% endif %}
+                {% if time.tuesday == True %}
+                <b>Tuesday</b>
+                {% endif %}
+                {% if time.wednesday %}
+                <b>Wednesday</b>
+                {% endif %}
+                {% if time.thursday %}
+                <b>Thursday</b>
+                {% endif %}
+                {% if time.friday %}
+                <b>Friday</b>
+                {% endif %}
+                <br>
+                From {{ time.start_time }} to {{ time.end_time }}
+
+
+            {% endfor %}
+        <br>
+    {% endif %}
+    <br>
+{% endfor %}
+</body>
+</html>
